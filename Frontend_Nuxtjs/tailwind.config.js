@@ -11,19 +11,24 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'tablet': '800px',
+        'sm': '576px',
+        'md': '768px',
         // => @media (min-width: 640px) { ... }
   
-        'laptop': '1024px',
+        'lg': '992px',
         // => @media (min-width: 1024px) { ... }
   
-        'desktop': '1280px',
+        'xl': '1024px',
+        'xxl' : '1280px',
+        'xxxl' : '1500px'
         // => @media (min-width: 1280px) { ... }
       },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      display: ["group-hover"],
+    },
   },
   plugins: [],
 }

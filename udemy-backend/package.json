@@ -1,5 +1,5 @@
 {
-  "name": "front-end",
+  "name": "udemy-backend",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -11,16 +11,16 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@strapi/plugin-i18n": "4.0.2",
-    "@strapi/plugin-users-permissions": "4.0.2",
-    "@strapi/strapi": "4.0.2",
+    "@strapi/strapi": "4.0.6",
+    "@strapi/plugin-users-permissions": "4.0.6",
+    "@strapi/plugin-i18n": "4.0.6",
     "sqlite3": "5.0.2"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "1d10d650-d696-48fb-ba62-de01778e77ce"
+    "uuid": "1b9b83d3-f007-4480-84ce-374297f865b2"
   },
   "engines": {
     "node": ">=12.x.x <=16.x.x",

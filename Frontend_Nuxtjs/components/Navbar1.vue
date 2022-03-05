@@ -183,7 +183,7 @@
                 <div
                   class="flex justify-between items-center hover:text-purple-500"
                 >
-                  <span @mouseenter="GetNodeValue">ement1</span
+                  <span>ement</span
                   ><span>
                     <fa class="text-md font-thin" icon="angle-right"
                   /></span>
@@ -193,7 +193,7 @@
                 <div
                   class="flex justify-between items-center hover:text-purple-500"
                 >
-                  <span @mouseenter="GetNodeValue">ement2</span
+                  <span>ement</span
                   ><span>
                     <fa class="text-md font-thin" icon="angle-right"
                   /></span>
@@ -203,7 +203,7 @@
                 <div
                   class="flex justify-between items-center hover:text-purple-500"
                 >
-                  <span @mouseenter="GetNodeValue">ement3</span
+                  <span>ement</span
                   ><span>
                     <fa class="text-md font-thin" icon="angle-right"
                   /></span>
@@ -213,7 +213,7 @@
                 <div
                   class="flex justify-between items-center hover:text-purple-500"
                 >
-                  <span @mouseenter="GetNodeValue">ement4</span
+                  <span>ement</span
                   ><span>
                     <fa class="text-md font-thin" icon="angle-right"
                   /></span>
@@ -223,7 +223,7 @@
                 <div
                   class="flex justify-between items-center hover:text-purple-500"
                 >
-                  <span @mouseenter="GetNodeValue">ement5</span
+                  <span>ement</span
                   ><span>
                     <fa class="text-md font-thin" icon="angle-right"
                   /></span>
@@ -238,11 +238,48 @@
             @mouseenter="mouseEnter2"
             @mouseleave="mouseLeave2"
           >
-            <ul
-              class="p-5 bg-gray-50 border shadow-md"
-              id="dataToAppendDynamically"
-            >
-      
+            <ul class="p-5 bg-gray-50 border shadow-md">
+              <li class="py-3">
+                <div
+                  @click.prevent="getValueOfNode"
+                  class="flex justify-between fghf items-center hover:text hover:text-purple-500"
+                >
+                  <span>Business</span
+                  ><span>
+                    <fa class="text-md font-thin" icon="angle-right"
+                  /></span>
+                </div>
+              </li>
+              <li class="py-3">
+                <div
+                  class="flex justify-between items-center hover:text hover:text-purple-500"
+                >
+                  <span>Business</span
+                  ><span>
+                    <fa class="text-md font-thin" icon="angle-right"
+                  /></span>
+                </div>
+              </li>
+              <li class="py-3">
+                <div
+                  class="flex justify-between items-center hover:text hover:text-purple-500"
+                >
+                  <span>Business</span
+                  ><span>
+                    <fa class="text-md font-thin" icon="angle-right"
+                  /></span>
+                </div>
+              </li>
+              <li class="py-3">
+                <div
+                  class="flex justify-between items-center hover:text hover:text-purple-500"
+                >
+                  <span>Business</span
+                  ><span>
+                    <fa class="text-md font-thin" icon="angle-right"
+                  /></span>
+                </div>
+              </li>
             </ul>
           </div>
         </a>
@@ -300,72 +337,52 @@
 </style>
 <script>
 import $ from "jquery";
-import $axios from "@nuxtjs/axios";
 export default {
   data: function () {
     return {
       toShowOnHover: false,
       toShowOnHover1: false,
       toShowOnHover2: false,
-      dataToSet: [],
     };
   },
   methods: {
-    mouseEnter: function () {
-      this.toShowOnHover = !this.toShowOnHover;
-    },
-    mouseLeave: function () {
-      this.toShowOnHover = false;
-      this.toShowOnHover1 = false;
-      this.toShowOnHover2 = false;
-    },
-    mouseEnter1: function () {
-      this.toShowOnHover1 = true;
-      this.toShowOnHover = true;
-    },
-    mouseLeave1: function () {
-      this.toShowOnHover1 = false;
-      this.toShowOnHover = false;
-      this.toShowOnHover2 = false;
-    },
-    mouseEnter2: function () {
-      this.toShowOnHover1 = true;
-      this.toShowOnHover = true;
-      this.toShowOnHover2 = true;
-    },
-    mouseLeave2: function () {
-      this.toShowOnHover1 = false;
-      this.toShowOnHover = false;
-      this.toShowOnHover2 = false;
-    },
-    async GetNodeValue(e) {
-      console.log(e.target.childNodes[0].data);
-      const { data } = await this.$axios.get(
-        `http://localhost:1337/api/categories?filters[Type][$eq]=Web_Development`
-      );
-      let dataToSet = data.data;
-      console.log(dataToSet);
-      let dataToAppend = dataToSet.map((item) => {
-        //  <li class="py-3">
-        //           <div
-        //             class="flex justify-between fghf items-center hover:text hover:text-purple-500"
-        //           >
-        //             <span>Business</span
-        //             ><span>
-        //               <fa class="text-md font-thin" icon="angle-right"
-        //             /></span>
-        //           </div>
-        //         </li>
-        return `<li class='py-3'><div class='flex justify-between items-center hover:text hover:text-purple-500'><span>${item.attributes.Name}</span><span><fa class='text-md font-thin' icon='angle-right'/></span></div></li>`
-      });
-      console.log(dataToAppend);
-      document.getElementById("dataToAppendDynamically").innerHTML =  dataToAppend;
+    // mouseEnter: function () {
+    //   this.toShowOnHover = !this.toShowOnHover;
+    //   alert("me1");
+    // },
+    // mouseLeave: function () {
+    //   this.toShowOnHover = false;
+    //   this.toShowOnHover1 = false;
+    //   this.toShowOnHover2 = false;
+    // },
+    // mouseEnter1: function () {
+    //   this.toShowOnHover1 = true;
+    //   this.toShowOnHover = true;
+    //   alert("me2");
+    // },
+    // mouseLeave1: function () {
+    //   this.toShowOnHover1 = false;
+    //   this.toShowOnHover = false;
+    //   this.toShowOnHover2 = false;
+    // },
+    // mouseEnter2: function () {
+    //   this.toShowOnHover1 = true;
+    //   this.toShowOnHover = true;
+    //   this.toShowOnHover2 = true;
+    // },
+    // mouseLeave2: function () {
+    //   this.toShowOnHover1 = false;
+    //   this.toShowOnHover = false;
+    //   this.toShowOnHover2 = false;
+    //   console.log("Hiii");
+    // },
+    getValueOfNode() {
+      alert("Hii");
     },
     openMobileMenu() {
       var element = document.getElementById("mobileMenu");
       element.classList.toggle("-translate-x-full");
     },
   },
-  async asyncData({ $axios }) {},
 };
 </script>
